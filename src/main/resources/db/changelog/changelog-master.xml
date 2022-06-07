@@ -8,6 +8,6 @@
 		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd
 		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.9.xsd">
-    <include file="/db/changelog/changes/location-changelog.xml"/>
-    <include file="/db/changelog/changes/appUser-changelog.xml"/>
+    <include file="/changes/location-changelog.xml" relativeToChangelogFile="true"/>
+    <include file="/changes/appUser-changelog.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

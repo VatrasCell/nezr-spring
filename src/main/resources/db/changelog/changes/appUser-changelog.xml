@@ -9,7 +9,7 @@
 		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.9.xsd">
     <changeSet author="Vatten" id="20220524_create_table">
-        <createTable tableName="appUser">
+        <createTable tableName="app_user">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
             </column>
@@ -21,12 +21,12 @@
             </column>
         </createTable>
         <rollback>
-            <dropTable tableName="appUser"/>
+            <dropTable tableName="app_user"/>
         </rollback>
     </changeSet>
     <changeSet author="Vatten" id="20220525_add_user">
         <sql>
-            INSERT INTO appUser VALUES (null, 'usr', '$2a$10$0LMXkJu46dlHZGCuU7pnSeK3mbcIOf7bVLd2iGRabUd3gvcyJEshS');
+            INSERT INTO app_user VALUES (1, 'usr', '$2a$10$0LMXkJu46dlHZGCuU7pnSeK3mbcIOf7bVLd2iGRabUd3gvcyJEshS');
         </sql>
     </changeSet>
 </databaseChangeLog>

@@ -10,7 +10,7 @@
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.9.xsd">
     <changeSet author="Vatten" id="20220318_create_table">
         <createTable tableName="location">
-            <column autoIncrement="true" name="id" type="INT">
+            <column autoIncrement="true" name="id" type="int">
                 <constraints primaryKey="true"/>
             </column>
             <column name="name" type="VARCHAR(255)">
@@ -24,11 +24,11 @@
     <changeSet author="Vatten" id="20220318_create_default_data">
         <sql>
             INSERT INTO location
-            VALUES (NULL, 'Bayerischer Wald'),
-                   (NULL, 'Rügen'),
-                   (NULL, 'Saarschleife'),
-                   (NULL, 'Schwarzwald'),
-                   (NULL, 'Lipno');
+            VALUES (1, 'Bayerischer Wald'),
+                   (2, 'Rügen'),
+                   (3, 'Saarschleife'),
+                   (4, 'Schwarzwald'),
+                   (5, 'Lipno');
         </sql>
     </changeSet>
 </databaseChangeLog>
