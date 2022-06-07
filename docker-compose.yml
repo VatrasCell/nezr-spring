@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  app:
+    container_name: nezr-spring-app
+    depends_on:
+      - postgressqldb
+    build: ./
+    #restart: on-failure
+    #env_file: ./.env
+    ports:
+      - "8080:8080"
+    #stdin_open: true
+    #tty: true
+  postgressqldb:
+    container_name: postgressqldb
+    image: postgres:14.3
+    #restart: unless-stopped
+    #env_file: ./.env
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=default_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgres
+volumes:
+  db:

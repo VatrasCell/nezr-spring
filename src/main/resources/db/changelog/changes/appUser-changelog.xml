@@ -8,27 +8,25 @@
 		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd
 		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.9.xsd">
-    <changeSet author="Vatten" id="20220318_create_table">
-        <createTable tableName="location">
+    <changeSet author="Vatten" id="20220524_create_table">
+        <createTable tableName="appUser">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="name" type="VARCHAR(255)">
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
         <rollback>
-            <dropTable tableName="location"/>
+            <dropTable tableName="appUser"/>
         </rollback>
     </changeSet>
-    <changeSet author="Vatten" id="20220318_create_default_data">
+    <changeSet author="Vatten" id="20220525_add_user">
         <sql>
-            INSERT INTO location
-            VALUES (NULL, 'Bayerischer Wald'),
-                   (NULL, 'Rügen'),
-                   (NULL, 'Saarschleife'),
-                   (NULL, 'Schwarzwald'),
-                   (NULL, 'Lipno');
+            INSERT INTO appUser VALUES (null, 'usr', '$2a$10$0LMXkJu46dlHZGCuU7pnSeK3mbcIOf7bVLd2iGRabUd3gvcyJEshS');
         </sql>
     </changeSet>
 </databaseChangeLog>
